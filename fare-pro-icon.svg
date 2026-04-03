@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <defs>
+    <!-- Deep blue gradient background -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a6fff"/>
+      <stop offset="50%" style="stop-color:#0051d5"/>
+      <stop offset="100%" style="stop-color:#003aaa"/>
+    </linearGradient>
+    <!-- Glass specular highlight -->
+    <linearGradient id="glassTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.45)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.0)"/>
+    </linearGradient>
+    <!-- Car glass (windshield) -->
+    <linearGradient id="windshield" x1="0%" y1="0%" x2="30%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(180,220,255,0.9)"/>
+      <stop offset="100%" style="stop-color:rgba(100,170,255,0.6)"/>
+    </linearGradient>
+    <!-- Wheel gradient -->
+    <radialGradient id="wheelGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" style="stop-color:#3a3a5c"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </radialGradient>
+    <!-- Baht symbol glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Clip to rounded rect -->
+    <clipPath id="roundClip">
+      <rect width="180" height="180" rx="40"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="180" height="180" rx="40" fill="url(#bgGrad)"/>
+
+  <!-- Subtle background glow spots (depth) -->
+  <ellipse cx="40" cy="30" rx="70" ry="50" fill="rgba(100,160,255,0.18)" clip-path="url(#roundClip)"/>
+  <ellipse cx="150" cy="160" rx="60" ry="40" fill="rgba(0,30,120,0.25)" clip-path="url(#roundClip)"/>
+
+  <!-- ── CAR BODY ── -->
+  <!-- Shadow under car -->
+  <ellipse cx="90" cy="136" rx="52" ry="6" fill="rgba(0,0,0,0.25)"/>
+
+  <!-- Main body -->
+  <rect x="30" y="95" width="120" height="36" rx="10" fill="rgba(255,255,255,0.95)"/>
+
+  <!-- Roof -->
+  <path d="M58 95 L70 64 H110 L122 95 Z" fill="rgba(255,255,255,0.95)"/>
+
+  <!-- Windshield -->
+  <path d="M73 95 L81 70 H99 L107 95 Z" fill="url(#windshield)" rx="3"/>
+  <!-- Windshield inner reflection -->
+  <path d="M76 92 L82 74 H88 L84 92 Z" fill="rgba(255,255,255,0.3)"/>
+
+  <!-- Side windows -->
+  <rect x="58" y="72" width="12" height="18" rx="3" fill="url(#windshield)"/>
+  <rect x="110" y="72" width="12" height="18" rx="3" fill="url(#windshield)"/>
+
+  <!-- Door lines -->
+  <line x1="90" y1="95" x2="90" y2="131" stroke="rgba(0,60,180,0.15)" stroke-width="1"/>
+
+  <!-- Headlights -->
+  <rect x="30" y="100" width="14" height="8" rx="3" fill="rgba(255,240,180,0.9)"/>
+  <rect x="136" y="100" width="14" height="8" rx="3" fill="rgba(255,240,180,0.9)"/>
+  <!-- Headlight glow -->
+  <rect x="28" y="99" width="16" height="10" rx="4" fill="rgba(255,230,100,0.3)"/>
+
+  <!-- Tail lights -->
+  <rect x="30" y="110" width="10" height="6" rx="2" fill="rgba(255,60,60,0.85)"/>
+  <rect x="140" y="110" width="10" height="6" rx="2" fill="rgba(255,60,60,0.85)"/>
+
+  <!-- ── WHEELS ── -->
+  <!-- Rear wheel -->
+  <circle cx="62" cy="131" r="13" fill="url(#wheelGrad)"/>
+  <circle cx="62" cy="131" r="8" fill="rgba(60,60,90,0.8)"/>
+  <circle cx="62" cy="131" r="4" fill="rgba(200,210,255,0.6)"/>
+  <!-- Rear hubcap spokes -->
+  <line x1="62" y1="124" x2="62" y2="138" stroke="rgba(180,190,255,0.5)" stroke-width="1.5"/>
+  <line x1="55" y1="131" x2="69" y2="131" stroke="rgba(180,190,255,0.5)" stroke-width="1.5"/>
+
+  <!-- Front wheel -->
+  <circle cx="118" cy="131" r="13" fill="url(#wheelGrad)"/>
+  <circle cx="118" cy="131" r="8" fill="rgba(60,60,90,0.8)"/>
+  <circle cx="118" cy="131" r="4" fill="rgba(200,210,255,0.6)"/>
+  <!-- Front hubcap spokes -->
+  <line x1="118" y1="124" x2="118" y2="138" stroke="rgba(180,190,255,0.5)" stroke-width="1.5"/>
+  <line x1="111" y1="131" x2="125" y2="131" stroke="rgba(180,190,255,0.5)" stroke-width="1.5"/>
+
+  <!-- ── BAHT SYMBOL (center of car) ── -->
+  <text x="90" y="118" 
+        font-family="-apple-system,sans-serif" 
+        font-size="19" 
+        font-weight="700" 
+        fill="#1a5fff"
+        text-anchor="middle"
+        filter="url(#glow)">฿</text>
+
+  <!-- ── LIQUID GLASS OVERLAY ── -->
+  <!-- Top specular highlight (glass sheen) -->
+  <rect width="180" height="90" rx="40" fill="url(#glassTop)" clip-path="url(#roundClip)"/>
+
+  <!-- Bottom subtle reflection -->
+  <rect x="0" y="140" width="180" height="40" rx="0" 
+        fill="rgba(255,255,255,0.05)" clip-path="url(#roundClip)"/>
+
+  <!-- Glass edge highlight (left) -->
+  <rect x="0" y="0" width="4" height="180" 
+        fill="rgba(255,255,255,0.2)" clip-path="url(#roundClip)"/>
+
+  <!-- Glass edge highlight (top) -->
+  <rect x="0" y="0" width="180" height="3" 
+        fill="rgba(255,255,255,0.35)" clip-path="url(#roundClip)"/>
+
+  <!-- Outer border glow -->
+  <rect width="180" height="180" rx="40" 
+        fill="none" 
+        stroke="rgba(255,255,255,0.25)" 
+        stroke-width="1.5"/>
+</svg>
