@@ -824,8 +824,9 @@ function bindRateInputs(){
   }));
   document.querySelectorAll('#page-set .step-btn').forEach(btn=>btn.addEventListener("click",()=>{
     const k=btn.dataset.key, d=parseInt(btn.dataset.d);
-    const big=["maintenanceCost","maintenanceKm","tireCost","tireKm","insuranceCost","insuranceKm","baseFare","perWaitHour"];
-    const s = k==="fuelCost" ? 10
+    const big=["maintenanceCost","maintenanceKm","tireCost","tireKm","insuranceCost","insuranceKm","perWaitHour"];
+    const s = k==="fuelCost" ? 1
+            : k==="baseFare" ? 5
             : big.includes(k) ? (k.endsWith("Km")?1000:100)
             : 0.5;
     rates[k]=Math.max(0,Math.round((rates[k]+d*s)*1000)/1000);
