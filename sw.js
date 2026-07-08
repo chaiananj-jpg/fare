@@ -6,7 +6,7 @@
      • Static assets       → cache-first    (fast, offline-friendly)
    Bump CACHE on every deploy so old caches are purged on activate.
    ============================================================ */
-const CACHE = "charter-fare-v11";
+const CACHE = "charter-fare-v12";
 const ASSETS = [
   "./",
   "./index.html",
